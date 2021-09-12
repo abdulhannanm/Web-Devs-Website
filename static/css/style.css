@@ -70,8 +70,6 @@ body:before {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    -webkit-transition: .3s all ease;
-    -o-transition: .3s all ease;
     transition: .3s all ease;
     opacity: 0;
     visibility: hidden;
