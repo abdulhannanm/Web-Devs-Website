@@ -20,11 +20,11 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Style -->
-    <link rel="stylesheet" href="static/css/animation.css">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
 
@@ -38,30 +38,30 @@
     <nav class="navbar navbar-expand enter-left-bounce py-0" style="width: 100%; background-color: rgb(87, 98, 112);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="static/logobg.png" alt="Logo" width="120" height="120">
+                <img src="image/logobg.png" alt="Logo" width="120" height="120">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="/">Home</a>
-                    <a class="nav-link active" href="/about">About Us</a>
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" href="about.html">About Us</a>
+                    <a class="nav-link" href="#">Register</a>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="hero enter-up-bounce" style="background-image: url(static/backimg.jpeg); background-position: center; background-repeat: no-repeat; background-size:contain;"></div>
+    <div class="hero enter-up-bounce" style="background-image: url(image/backimg.jpeg); background-position: center; background-repeat: no-repeat; background-size:contain;"></div>
 
     <div style="text-align: center; width: 100%; background-color: #fff;">
         <br>
         <br>
 
         <div class="container">
-            <div class="row ">
+            <div class="row box1">
                 <div class="col-md-4 ">
-                    <img height="200px" width="200px" src="static/website-development.png" alt="website-building">
+                    <img height="200px" width="200px" src="image/website-development.png" alt="website-building">
                     <br>
                     <br>
                     <br>
@@ -69,19 +69,19 @@
                 </div>
 
                 <div class="col-md-4 ">
-                    <img height="200px" width="200px" src="static/teaching.png" alt="website-building">
-                    <br>
-                    <br>
-                    <br>
-                    <p class="info-text">We will teach you Web dev during our club meetings!</p>
+                    < <img height="200px" width="200px" src="image/teaching.png" alt="website-building">
+                        <br>
+                        <br>
+                        <br>
+                        <p class="info-text">We will teach you Web dev during our club meetings!</p>
                 </div>
 
                 <div class="col-md-4 ">
-                    <img class="homepage-icons" src="static/building-website.png" alt="website-building">
-                    <br>
-                    <br>
-                    <br>
-                    <p class="info-text">We can help you with coding websites!</p>
+                    < <img height="200px" width="250px" src="image/building-website.png" alt="website-building">
+                        <br>
+                        <br>
+                        <br>
+                        <p class="info-text">We can help you with coding websites!</p>
                 </div>
 
             </div>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-lg-4 " style="text-align: center;">
-                <img class="staticChange" height="600px" width="600px" src="static/programming.png" styel="background-position: center; background-repeat: no-repeat; background-size:contain;" alt="website-building">
+                <img class="imageChange" height="600px" width="600px" src="image/programming.png" styel="background-position: center; background-repeat: no-repeat; background-size:contain;" alt="website-building">
             </div>
         </div>
 
@@ -124,9 +124,9 @@
             <br>
             <small>This website is the property of the Web Dev Club of Mission San Jose High School
                 <br>
-                Designed by Kartik M. Pulipati
+                Made by Kartik M. Pulipati
                 <br>
-                Register Function by ________
+                Register Function by Abdul Hannanm
             </small>
 
         </footer>
@@ -156,6 +156,28 @@
                     f = function() {
 
                         $(els[i++]).addClass('enter-left-bounce');
+                        if (i < els.length) setTimeout(f, 7000);
+                    };
+                f();
+            }
+        });
+
+        $(window).scroll(function() {
+            // This is then function used to detect if the element is scrolled into view
+            function elementScrolled(elem) {
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+                var elemTop = $(elem).offset().top;
+                return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+            }
+
+            // This is where we use the function to detect if ".box2" is scrolled into view, and when it is add the class ".animated" to the <p> child element
+            if (elementScrolled('.box1')) {
+                var els = $('.box1'),
+                    i = 0,
+                    f = function() {
+
+                        $(els[i++]).addClass('enter-down-bounce');
                         if (i < els.length) setTimeout(f, 7000);
                     };
                 f();
